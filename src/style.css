@@ -1,0 +1,17 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  color: var(--dark);
+  background-color: var(--light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --dark: #191e21;
+  --middle: #c7c9c0;
+  --main: #e94f37;
+  --light: #f6f7eb;
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap");
+
+      * {
+      }
+
+      body {
+        width: 100dvw;
+        height: 100dvh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-x: clip;
+      }
+
+      nav {
+        position: fixed;
+        width: 100%;
+        height: 2rem;
+        background-color: var(--light);
+        z-index: 3;
+        border-bottom: solid var(--middle) 0.1rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      ol {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: var(--dark);
+        font-size: 1rem;
+        margin: 0;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      ul {
+        padding: 0;
+        margin: 1rem;
+        gap: 1rem;
+      }
+
+      li {
+        list-style: none;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        color: var(--dark);
+        font-size: 1.777rem;
+        font-family: "IBM Plex Serif", sans-serif;
+        font-weight: 600;
+      }
+
+      .category-container {
+        top: 4rem;
+        position: fixed;
+        width: 8rem;
+        height: calc(100% - 4rem);
+        border-right: 0.1rem solid var(--middle);
+        z-index: 2;
+      }
+
+      .content-container {
+        width: calc(100% - 8rem);
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        margin: 0;
+        margin-left: 8rem;
+        margin-top: 4rem;
+      }
+
+      .account-container {
+        margin-right: 2rem;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      button {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        padding: 0.3rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: row;
+        background-color: var(--main);
+        filter: drop-shadow(0.1rem 0.1rem var(--dark));
+        aspect-ratio: 1;
+      }
+
+      .profile-picture {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        background-color: var(--middle);
+      }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body
+    x-data="{
+    categories: [
+      {
+        name: '🏠 Home',
+        link: '/'
+      },
+      {
+        name: '🏛️ Classes',
+        link: '/classes'
+      },
+      {
+        name: '💬 Messages',
+        link: '/messages'
+      },
+      {
+        name: '⚙️ Settings',
+        link: '/settings'
+      },
+    ],
+    posts: [
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+      {
+        user: 's023322',
+        title: 'My dog ate my homework',
+        description: 'He was hungry',
+        score: 0,
+        comments: ['zamn', 'jeez']
+      },
+    ]
+  }"
+  >
+    <script type="module" src="/src/main.js"></script>
+    <nav>
+      <h1>🏫 Lome</h1>
+      <div class="account-container">
+        <button>🔍</button>
+        <button>🔔</button>
+        <img class="profile-picture" />
+      </div>
+    </nav>
+    <div class="category-container">
+      <ul>
+        <template x-for="category in categories">
+          <li><a :href="category.link" x-text="category.name"></a></li>
+        </template>
+      </ul>
+    </div>
+    <div class="content-container">
+      <ol>
+        <template x-for="post in posts">
+          <x-component url="/src/post.html" x-data="post"></x-component>
+        </template>
+      </ol>
+    </div>
+  </body>
+</html>

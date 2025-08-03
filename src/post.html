@@ -1,0 +1,87 @@
+<li>
+  <style>
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 1rem;
+      border-bottom: 0.1rem solid var(--middle);
+      user-select: none;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: 1.777rem;
+      margin: 0;
+      font-family: "IBM Plex Serif", sans-serif;
+    }
+
+    h2 {
+      font-size: 1.333rem;
+      color: var(--dark);
+      font-weight: 600;
+      margin: 0;
+      font-family: "IBM Plex Serif", sans-serif;
+    }
+
+    h3 {
+      color: var(--dark);
+      font-size: 1.333rem;
+      margin: 0;
+      margin-bottom: 1.333rem;
+      font-family: "IBM Plex Sans Condensed", sans-serif;
+    }
+
+    p {
+      color: var(--dark);
+      font-size: 1rem;
+      margin: 0;
+      font-family: "IBM Plex Sans Condensed", sans-serif;
+    }
+
+    button {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      padding: 0.3rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: row;
+      background-color: var(--main);
+      filter: drop-shadow(0.1rem 0.1rem var(--dark));
+    }
+
+    .spacer {
+      margin: 0;
+      padding: 0;
+      width: 0.5rem;
+    }
+
+    .interaction-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+    }
+  </style>
+  <div class="text-container">
+    <p x-text="post.user"></p>
+    <h2 x-text="post.title"></h2>
+    <h3 x-text="post.description"></h3>
+    <div class="interaction-container">
+      <button>👍</button>
+      <p x-text="post.score"></p>
+      <button>👎</button>
+      <div class="spacer"></div>
+      <button
+        style="padding-right: 0.5rem"
+        x-text="`💬 ${post.comments.length}`"
+      ></button>
+    </div>
+  </div>
+</li>
